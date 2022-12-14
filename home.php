@@ -20,13 +20,11 @@ include 'conn.php';
         $result=mysqli_query($conn,$sql);
         if($result){
             while($row=mysqli_fetch_assoc($result)){
-                $date=$row['date'];
                 $title=$row['title'];
                 $content=$row['content'];
                 $author=$row['author'];
                 echo'<div class="card">
                 <div>
-                <span>'.$date.'</span>
                     <h3>'.$title.'</h3>
                 </div>
                 <div>
@@ -42,20 +40,6 @@ include 'conn.php';
             }
         }
         ?>
-        <!-- <div class="card">
-            <div>
-                <h4>title</h4>
-            </div>
-            <div>
-                <h6>image</h6>
-            </div>
-            <div>
-                <p>Content</p>
-            </div>
-            <div>
-                <span>author</span>
-            </div>
-        </div> -->
     </div>
 </body>
 </html>
