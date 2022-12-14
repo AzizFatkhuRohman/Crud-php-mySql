@@ -20,21 +20,24 @@ include 'conn.php';
         $result=mysqli_query($conn,$sql);
         if($result){
             while($row=mysqli_fetch_assoc($result)){
+                $id=$row['id'];
                 $title=$row['title'];
                 $content=$row['content'];
                 $author=$row['author'];
                 echo'<div class="card">
                 <div>
+                    <span>'.$id.'</span>
                     <h3>'.$title.'</h3>
-                </div>
-                <div>
-                    <h6>image</h6>
                 </div>
                 <div>
                     <p>'.$content.'</p>
                 </div>
                 <div>
                     <span>'.$author.'</span>
+                </div>
+                <div>
+                <button><a href="edit.php?editid='.$id.'">EDIT</a></button>
+                <button><a href="delete.php?deleteid='.$id.'">DELETE</a></button>
                 </div>
             </div>';
             }
